@@ -1,11 +1,7 @@
 
-<p align="center">
-  
-  <br />
-  <p align="center">
-  Angular Starter
-  <br /><br />
+#  A complete Angular starter project 😍
 
+<p align="center">
   <a href="https://circleci.com/gh/truonghungit/angular-starter">
     <img src="https://img.shields.io/circleci/build/github/truonghungit/angular-starter/master.svg?style=flat-square" />
   </a>
