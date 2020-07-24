@@ -6,7 +6,7 @@ describe('SentryService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SentryService = TestBed.get(SentryService);
+    const service: SentryService = TestBed.inject(SentryService);
     expect(service).toBeTruthy();
   });
 });

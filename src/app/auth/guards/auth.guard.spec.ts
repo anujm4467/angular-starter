@@ -20,8 +20,8 @@ describe('AuthGuard', () => {
       ],
     });
 
-    store = TestBed.get(Store);
-    guard = TestBed.get(AuthGuard);
+    store = TestBed.inject(Store);
+    guard = TestBed.inject(AuthGuard);
 
     isAuthenticated = store.overrideSelector(AuthSelectors.selectIsAuthenticated, false);
   });

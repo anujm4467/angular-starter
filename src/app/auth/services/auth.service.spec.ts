@@ -24,8 +24,8 @@ describe('AuthService', () => {
   });
 
   function setup() {
-    const service: AuthService = TestBed.get(AuthService);
-    const backend: HttpTestingController = TestBed.get(HttpTestingController);
+    const service: AuthService = TestBed.inject(AuthService);
+    const backend: HttpTestingController = TestBed.inject(HttpTestingController);
 
     return { service, backend };
   }

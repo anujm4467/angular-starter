@@ -14,8 +14,8 @@ describe('ContactService', () => {
   });
 
   function setup() {
-    const service: ContactService = TestBed.get(ContactService);
-    const backend: HttpTestingController = TestBed.get(HttpTestingController);
+    const service: ContactService = TestBed.inject(ContactService);
+    const backend: HttpTestingController = TestBed.inject(HttpTestingController);
 
     return { service, backend };
   }

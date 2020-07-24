@@ -1,26 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {
-  // MatSidenavModule,
-  MatToolbarModule,
-  MatButtonModule,
-  MatMenuModule,
-  MatIconModule
-  // MatListModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminLayoutComponent, AdminToolbarComponent, AdminSidebarComponent } from './layout';
 const MAT_MODULES = [
-  // MatSidenavModule,
   MatToolbarModule,
   MatButtonModule,
   MatMenuModule,
   MatIconModule
-  // MatListModule
 ];
 
 @NgModule({

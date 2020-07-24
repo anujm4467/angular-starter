@@ -12,7 +12,7 @@ describe('AppErrorHandler', () => {
   });
 
   it('should be created', () => {
-    const appErrorHandler: AppErrorHandler = TestBed.get(AppErrorHandler);
+    const appErrorHandler: AppErrorHandler = TestBed.inject(AppErrorHandler);
     expect(appErrorHandler).toBeTruthy();
   });
 

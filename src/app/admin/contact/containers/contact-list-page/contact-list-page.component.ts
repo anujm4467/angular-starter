@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 
 import { ConfirmDialogComponent } from '@app/shared/dialog';
@@ -18,7 +18,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./contact-list-page.component.scss']
 })
 export class ContactListPageComponent implements OnInit {
-  @ViewChild('contactTable', { static: false }) contactTable: ContactTableComponent;
+  @ViewChild('contactTable') contactTable: ContactTableComponent;
 
   pending$: Observable<boolean>;
   notEmpty$: Observable<boolean>;

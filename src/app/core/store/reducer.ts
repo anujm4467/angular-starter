@@ -1,8 +1,6 @@
 import { ActionReducerMap, MetaReducer, Action } from '@ngrx/store';
 import { routerReducer, RouterReducerState } from '@ngrx/router-store';
 
-import { storeFreeze } from 'ngrx-store-freeze';
-
 import { environment as env } from '@app/env';
 import { RouterStateModel } from '../router';
 import { logger, localStorageSyncReducer } from './meta-reducers';
@@ -19,5 +17,5 @@ export const reducers: ActionReducerMap<AppState, Action> = {
 };
 
 export const metaReducers: Array<MetaReducer<AppState>> = !env.production
-  ? [logger, storeFreeze, localStorageSyncReducer]
+  ? [logger, localStorageSyncReducer]
   : [localStorageSyncReducer];
