@@ -1,14 +1,17 @@
-<div class="chat-message" *ngFor="let payload of message.payloads">
+<ng-container *ngIf="message">
+  <div class="chat-message" *ngFor="let payload of message.payloads">
 
-  <ng-container [ngSwitch]="payload.type">
-    <ng-container *ngSwitchCase="'text'">
-      <app-chat-text-message [content]="payload.content"></app-chat-text-message>
+    <ng-container [ngSwitch]="payload.type">
+      <ng-container *ngSwitchCase="'text'">
+        <app-chat-text-message [content]="payload.content"></app-chat-text-message>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'image'">
+        <app-chat-image-message [content]="payload.content"></app-chat-image-message>
+      </ng-container>
+
     </ng-container>
 
-    <ng-container *ngSwitchCase="'image'">
-      <app-chat-image-message [content]="payload.content"></app-chat-image-message>
-    </ng-container>
+  </div>
 
-  </ng-container>
-
-</div>
+</ng-container>

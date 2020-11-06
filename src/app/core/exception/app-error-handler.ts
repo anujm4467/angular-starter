@@ -5,7 +5,9 @@ import { LoggerService } from '../logger';
 @Injectable()
 export class AppErrorHandler extends ErrorHandler {
 
-  constructor(private loggerService: LoggerService) {
+  constructor(
+    private loggerService: LoggerService
+  ) {
     super();
   }
 
