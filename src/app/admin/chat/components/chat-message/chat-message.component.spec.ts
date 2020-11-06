@@ -1,4 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ChatImageMessageComponent } from '../chat-image-message/chat-image-message.component';
+import { ChatTextMessageComponent } from '../chat-text-message/chat-text-message.component';
 
 import { ChatMessageComponent } from './chat-message.component';
 
@@ -8,9 +11,16 @@ describe('ChatMessageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatMessageComponent ]
+      imports: [
+        CommonModule
+      ],
+      declarations: [
+        ChatTextMessageComponent,
+        ChatImageMessageComponent,
+        ChatMessageComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

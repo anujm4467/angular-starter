@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { COMPONENTS } from '../../components';
 import { ChatPageComponent } from './chat-page.component';
 
 describe('ChatPageComponent', () => {
@@ -8,9 +9,12 @@ describe('ChatPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatPageComponent ]
+      declarations: [
+        COMPONENTS,
+        ChatPageComponent,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

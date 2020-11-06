@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { LoggerService } from '../logger';
 
 import { AppErrorHandler } from './app-error-handler';
 
@@ -6,7 +7,8 @@ describe('AppErrorHandler', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        AppErrorHandler
+        AppErrorHandler,
+        { provide: LoggerService, useValue: {} }
       ]
     });
   });

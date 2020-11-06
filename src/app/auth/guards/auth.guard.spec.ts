@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Store, MemoizedSelector } from '@ngrx/store';
+import { MemoizedSelector } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { cold } from 'jasmine-marbles';
 
@@ -20,7 +20,7 @@ describe('AuthGuard', () => {
       ],
     });
 
-    store = TestBed.inject(Store);
+    store = TestBed.inject(MockStore);
     guard = TestBed.inject(AuthGuard);
 
     isAuthenticated = store.overrideSelector(AuthSelectors.selectIsAuthenticated, false);
@@ -30,17 +30,34 @@ describe('AuthGuard', () => {
     expect(guard).toBeTruthy();
   });
 
-  it('should return false if the user state is not authenticated', () => {
-    const expected = cold('(a|)', { a: false });
+  describe('canActivate', () => {
+    it('should return false if the user state is not authenticated', () => {
+      const expected = cold('(a|)', { a: false });
 
-    expect(guard.canActivate()).toBeObservable(expected);
+      expect(guard.canActivate()).toBeObservable(expected);
+    });
+
+    it('should return true if the user state is authenticated', () => {
+      const expected = cold('(a|)', { a: true });
+      isAuthenticated.setResult(true);
+
+      expect(guard.canActivate()).toBeObservable(expected);
+    });
   });
 
-  it('should return true if the user state is authenticated', () => {
-    const expected = cold('(a|)', { a: true });
-    isAuthenticated.setResult(true);
+  describe('canActivateChild', () => {
+    it('should return false if the user state is not authenticated', () => {
+      const expected = cold('(a|)', { a: false });
 
-    expect(guard.canActivate()).toBeObservable(expected);
+      expect(guard.canActivate()).toBeObservable(expected);
+    });
+
+    it('should return true if the user state is authenticated', () => {
+      const expected = cold('(a|)', { a: true });
+      isAuthenticated.setResult(true);
+
+      expect(guard.canActivate()).toBeObservable(expected);
+    });
   });
 
 });
