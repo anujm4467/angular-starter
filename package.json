@@ -9,7 +9,7 @@
     "build:prod": "ng build --prod",
     "test": "ng test",
     "test:coverage": "ng test --code-coverage",
-    "test:ci": "ng test --watch=false --no-progress --browsers=ChromeHeadless",
+    "test:ci": "ng test --watch=false --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "firebase deploy --only hosting",
